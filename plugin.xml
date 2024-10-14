@@ -19,13 +19,16 @@
 
   <!-- android -->
   <platform name="android">
-
+    <config-file parent="/resources" target="res/values/styles.xml">
+      <style name="Theme.App.Player" parent="Theme.AppCompat.Light.NoActionBar">
+      </style>
+    </config-file>
     <config-file target="res/xml/config.xml" parent="/*">
       <preference name="GradlePluginKotlinVersion" value="1.6.0" />
       <preference name="GradlePluginKotlinEnabled" value="true" />
       <preference name="GradlePluginKotlinCodeStyle" value="official" />
       <feature name="WowzaPlayer">
-        <param name="android-package" value="com.outsystems.experts.wowzaplayer" />
+        <param name="android-package" value="com.outsystems.experts.WowzaPlayer" />
         <param name="onload" value="true" />
       </feature>
     </config-file>
@@ -39,6 +42,7 @@
       <!-- Register a new activity -->
       <activity
         android:name="com.outsystems.experts.WowzaActivity"
+        android:theme="@style/Theme.App.Player"
         android:exported="true">
       </activity>
     </config-file>
