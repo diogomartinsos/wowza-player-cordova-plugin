@@ -19,6 +19,7 @@
 
   <!-- android -->
   <platform name="android">
+    <preference name="playerToken" />
     <config-file parent="/resources" target="res/values/styles.xml">
       <style name="Theme.App.Player" parent="Theme.AppCompat.Light.NoActionBar">
       </style>
@@ -35,7 +36,7 @@
     <config-file parent="/manifest/application" target="AndroidManifest.xml">
       <meta-data
         android:name="com.flowplayer.accessToken"
-        android:value="eyJraWQiOiIyZ1pvRXRvT1BHdTYiLCJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJjIjoie1wiYWNsXCI6MzgsXCJpZFwiOlwiMmdab0V0b09QR3U2XCJ9IiwiaXNzIjoiRmxvd3BsYXllciJ9.-k-gxRpeM4t1A-G4UsckO0PiX-TuKtf_Fs37y-tx7h_sHDB9w3lORSRn7yWaO7EWqM1wxB_quIKkzdefFP3bDg" />
+        android:value="$playerToken" />
     </config-file>
 
     <config-file parent="/manifest/application" target="AndroidManifest.xml">
