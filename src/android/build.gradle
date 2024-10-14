@@ -1,0 +1,4 @@
+dependencies{
+     implementation ("com.flowplayer.android.player:flowplayer:2.2.2")
+    
+}

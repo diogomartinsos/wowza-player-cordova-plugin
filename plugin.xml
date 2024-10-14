@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+  id="wowzaplayer"
+  version="1.0.0">
+  <name>Cordova Plugin Template</name>
+  <description></description>
+  <license>MIT</license>
+  <keywords></keywords>
+  <repo>https://github.com/driftyco/cordova-plugin-template.git</repo>
+  <issue>https://github.com/driftyco/cordova-plugin-template/issues</issue>
+
+
+  <js-module src="www/WowzaPlayer.js" name="WowzaPlayer"> <!-- src = path js  name = que
+    mostra quando se instala -->
+    <clobbers target="cordova.plugins.wowzaPlayer" /> <!--Como
+    se encontra o plugin na window do browser-->
+  </js-module>
+
+  <!-- android -->
+  <platform name="android">
+
+    <config-file target="res/xml/config.xml" parent="/*">
+      <preference name="GradlePluginKotlinVersion" value="1.6.0" />
+      <preference name="GradlePluginKotlinEnabled" value="true" />
+      <preference name="GradlePluginKotlinCodeStyle" value="official" />
+      <feature name="WowzaPlayer">
+        <param name="android-package" value="com.outsystems.experts.wowzaplayer" />
+        <param name="onload" value="true" />
+      </feature>
+    </config-file>
+    <config-file parent="/manifest/application" target="AndroidManifest.xml">
+      <meta-data
+        android:name="com.flowplayer.accessToken"
+        android:value="eyJraWQiOiIyZ1pvRXRvT1BHdTYiLCJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJjIjoie1wiYWNsXCI6MzgsXCJpZFwiOlwiMmdab0V0b09QR3U2XCJ9IiwiaXNzIjoiRmxvd3BsYXllciJ9.-k-gxRpeM4t1A-G4UsckO0PiX-TuKtf_Fs37y-tx7h_sHDB9w3lORSRn7yWaO7EWqM1wxB_quIKkzdefFP3bDg" />
+    </config-file>
+
+    <config-file parent="/manifest/application" target="AndroidManifest.xml">
+      <!-- Register a new activity -->
+      <activity
+        android:name="com.outsystems.experts.WowzaActivity"
+        android:exported="true">
+      </activity>
+    </config-file>
+
+    <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
+    <source-file src="src/android/WowzaPlayer.kt"
+      target-dir="app/src/main/kotlin/com/outsystems/experts/" />
+    <source-file src="src/android/WowzaActivity.kt"
+      target-dir="app/src/main/kotlin/com/outsystems/experts/" />
+    <source-file src="src/android/activity_main.xml"
+      target-dir="app/src/main/res/layout" />
+  </platform>
+
+
+</plugin>
