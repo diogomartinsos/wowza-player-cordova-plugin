@@ -19,7 +19,8 @@ class WowzaActivity: AppCompatActivity(), OnPauseListener {
     }
 
     fun createPlayer(mediaURL:String){
-        val playerFragment = supportFragmentManager.findFragmentById(R.id.player_fragment) as FlowplayerSupportFragment
+        val fragmentId=resources.getIdentifier("player_fragment","id",packageName)
+        val playerFragment = supportFragmentManager.findFragmentById(fragmentId) as FlowplayerSupportFragment
         flowplayer = playerFragment.getPlayer()
         flowplayer.addEventListener(this)
 
