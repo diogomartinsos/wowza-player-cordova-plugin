@@ -6,14 +6,14 @@ import com.flowplayer.android.player.FlowplayerSupportFragment;
 import com.flowplayer.android.player.event.PauseEvent;
 import com.flowplayer.android.player.event.listener.*;
 import com.flowplayer.android.player.media.ExternalMedia;
-import com.outsystems.wowzaplayer.R
 
 
 class WowzaActivity: AppCompatActivity(), OnPauseListener {
     lateinit var flowplayer: Flowplayer
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        val layoutId=resources.getIdentifier("activity_main","layout",packageName)
+        setContentView(layoutId)
         val mediaURL = intent.extras?.getString("MEDIA_URL") ?: ""
         this.createPlayer(mediaURL)
     }
