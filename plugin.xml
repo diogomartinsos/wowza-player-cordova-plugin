@@ -20,7 +20,7 @@
   <!-- android -->
   <platform name="android">
     <preference name="playerToken" />
-    <config-file parent="/resources" target="res/values/styles.xml">
+    <config-file parent="/resources" target="res/values/themes.xml">
       <style name="Theme.App.Player" parent="Theme.AppCompat.Light.NoActionBar">
       </style>
     </config-file>
